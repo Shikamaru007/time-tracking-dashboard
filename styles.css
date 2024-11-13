@@ -1,7 +1,249 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root{
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red-work: hsl(15, 100%, 70%);
+    --Soft-blue-play: hsl(195, 74%, 62%);
+    --Light-red-study: hsl(348, 100%, 68%);
+    --Lime-green-exercise: hsl(145, 58%, 55%);
+    --Violet-social: hsl(264, 64%, 52%);
+    --Soft-orange-self-care: hsl(43, 84%, 65%);
+
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Rubik", sans-serif;
+    color: white;
+}
+html{
+    font-size: 18px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 0;
+    background-color: var(--Very-dark-blue);
+}
+.container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 35rem;
+}
+header{
+    background-color: var(--Dark-blue);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 10;
+}
+.profile{
+    background-color: var(--Blue);
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: 1.8rem 1.5rem;
+    border-radius: 20px;
+}
+.pfp{
+    border: 3px solid white;
+    display: flex;
+    width: 25%;
+    border-radius: 50%;
+    height: fit-content;
+}
+.pfp img {
+    width: 100%;
+    object-fit: contain;
+}
+.profile-details{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+.profile-details span{
+    color: var(--Pale-Blue);
+    font-weight: 400;
+    font-size: .8rem;
+}
+.profile-details h1{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+.buttons{
+    margin: .5rem 0;
+    display: flex;
+}
+.btn{
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--Desaturated-blue);
+    cursor: pointer;
+}
+.btn:hover{
+    color: rgba(255, 255, 255, 0.807);
+}
+.btn.active{
+    color: rgba(255, 255, 255, 1);
+}
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.card{
+    position: relative;
+    padding-top: 2rem;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+}
+.icon{
+    position: absolute;
+    width: 4rem;
+    top: -5%;
+    right: 5%;
+    z-index: 1;
+    pointer-events: none;
+}
+.card-details{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    width: 100%;
+    justify-content: space-between;
+    background-color: var(--Dark-blue);
+    padding: 1rem 1.5rem;
+    border-radius: 17px 17px 0 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: all .2s ease;
+}
+.card-details:hover{
+    background-color: hsl(235, 45%, 37%);
+    box-shadow: 0 -5px 35px hsla(226, 41%, 10%, 0.349);
+}
+.top-card-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-card-details .title {
+    font-weight: 500;
+    font-size: 1rem;
+}
+.bottom-card-details p{
+    font-size: 2rem;
+    font-weight: 300;
+}
+.bottom-card-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.material-symbols-outlined{
+    font-size: 1.8rem;
+      color: hsl(235, 45%, 78%);
+      cursor: pointer;
+}
+.material-symbols-outlined:hover{
+    color: white;
+}
+.bottom-card-details .previous{
+    font-size: .85rem;
+    color: hsl(235, 45%, 78%);
+    font-weight: 400;
+   
+}
+.work{
+    background-color: var(--Light-red-work);
+}
+.play{
+    background-color: var(--Soft-blue-play);
+}
+.study{
+    background-color: var(--Light-red-study);
+}
+.exercise{
+    background-color: var(--Lime-green-exercise);
+}
+.social{
+    background-color: var(--Violet-social);
+}
+.self-care{
+    background-color: var(--Soft-orange-self-care);
+}
+
+
+@media screen and (min-width:1200px){
+    body{
+        align-items: center;
+    }
+    header{
+        height: auto;
+    }
+    .profile{
+        flex-direction: column;
+        align-items: start;
+        gap: 3rem;
+        flex: 1;
+        padding: 2.2rem 1.5rem;
+   
+    }
+    .pfp{
+        width: 4rem;
+    }
+    .profile h1{
+        font-size: 1.7rem;
+    }
+    .buttons{
+        flex-direction: column;
+   
+    }
+    .btn{
+        padding: .5rem 1.2rem;
+    }
+    .btn{
+        text-align: left;
+    }
+    .container{
+        width: 80%;
+        max-width: 60rem;
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    .cards-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        gap: 1.5rem;
+    }
+    .card-details{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .bottom-card-details{
+        flex-direction: column;
+        align-items: start;
+        gap: .8rem;
+    }
+    .bottom-card-details p{
+        font-size: 3rem;
+    }
+   
+
 }
